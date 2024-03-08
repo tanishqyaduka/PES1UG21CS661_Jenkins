@@ -15,7 +15,7 @@ pipeline
         {
             steps
             {
-                sh 'g++ main.cpp -o output' build 'PES1UG21CS661-1'
+                sh 'g++ ./main/xyz.cpp -o output' build 'PES1UG21CS661-1'
             }
         }
 
@@ -25,7 +25,7 @@ pipeline
             {
                 sh './output' script
                 {
-                    def output = sh(script : './output', returnStdout : true).trim() echo "Output of main.cpp: ${output}"
+                    def output = sh(script : './output', returnStdout : true).trim() echo "Output of xyz.cpp: ${output}"
                 }
             }
         }
